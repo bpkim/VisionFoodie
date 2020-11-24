@@ -14,7 +14,7 @@ android {
         versionName "1.11"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-        setProperty("archivesBaseName", "vision-quickstart")
+        setProperty("archivesBaseName", "vision-foodie")
     }
     buildTypes {
         proguard {
