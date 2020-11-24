@@ -46,8 +46,8 @@
       android:layout_height="wrap_content"
       android:layout_margin="10dp"
       android:fontFamily="sans-serif-black"
-      android:text="'피자'로 검색된 데이터 5건"
       android:textAppearance="?attr/textAppearanceListItem"
+      android:text="'피자'로 검색된 데이터 5건"
       android:textColor="#000000" />
 
   <ListView

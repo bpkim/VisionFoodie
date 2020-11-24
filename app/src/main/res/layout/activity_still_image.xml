@@ -161,7 +161,9 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:text="죄송합니다. 음식을 찾지 못했어요..."
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-black"
+            android:textAppearance="?attr/textAppearanceListItem"/>
 
     </LinearLayout>
 
@@ -186,7 +188,9 @@
             android:layout_marginBottom="8dp"
             android:gravity="center_horizontal"
             android:text="인식결과 : 'pizza' (93%)"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:fontFamily="sans-serif-black"
+            android:textAppearance="?attr/textAppearanceListItem"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -198,7 +202,9 @@
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
             android:text="곧 결과화면으로 이동합니다. 잠시만 기다려주세요"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:fontFamily="sans-serif-black"
+            android:textAppearance="?attr/textAppearanceListItem"/>
 
 
     </LinearLayout>

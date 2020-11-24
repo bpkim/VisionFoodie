@@ -126,7 +126,7 @@ public class LabelDetectorProcessor extends VisionProcessorBase<List<ImageLabel>
                 .appName("My App")
                 .requestTimeout(30, TimeUnit.SECONDS)
                 .build());
-        Credentials credentials = Credentials.emailPassword("kbp0213@naver.com", "1qaz2wsx");//Credentials.anonymous();
+        Credentials credentials = Credentials.emailPassword("visionfoodieApp", "1qaz2wsx");//Credentials.anonymous();
 
         app.loginAsync(credentials, it -> {
           if (it.isSuccess()) {
