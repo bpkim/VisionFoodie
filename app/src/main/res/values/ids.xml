@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="control3" type="id" />
+    <item name="size_selector" type="id" />
+    <item name="feature_selector" type="id" />
+</resources>

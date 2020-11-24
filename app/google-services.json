@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "228745710192",
+    "firebase_url": "https://visionapi-294912.firebaseio.com",
+    "project_id": "visionapi-294912",
+    "storage_bucket": "visionapi-294912.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228745710192:android:aefb9b9739bc7d2f7b02b5",
+        "android_client_info": {
+          "package_name": "com.postfive.visionfoodie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228745710192-a481hi7qmp5ljargi6pguprfsjildh2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUtt8l9gyiQutDfOJx26GJKyl6KbOFIXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228745710192-a481hi7qmp5ljargi6pguprfsjildh2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
