@@ -129,16 +129,12 @@ public final class EntryActivity extends AppCompatActivity implements ActivityCo
     for (String permission : getRequiredPermissions()) {
       if (!isPermissionGranted(this, permission)) {
         allNeededPermissions.add(permission);
-        Log.i(TAG, "aaaa");
-
       }
     }
 
     if (!allNeededPermissions.isEmpty()) {
       ActivityCompat.requestPermissions(
               this, allNeededPermissions.toArray(new String[0]), PERMISSION_REQUESTS);
-      Log.i(TAG, "kkkkk");
-
     }
   }
 

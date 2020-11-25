@@ -90,7 +90,6 @@ public class LabelDetectorProcessor extends VisionProcessorBase<List<ImageLabel>
   protected void onSuccess(
           @NonNull List<ImageLabel> labels, @NonNull GraphicOverlay graphicOverlay) {
 
-    //graphicOverlay.add(new LabelGraphic(graphicOverlay, labels));
     Log.d(TAG, "onSuccess size "+labels.size());
     logExtrasForTesting(labels);
   }
@@ -119,25 +118,20 @@ public class LabelDetectorProcessor extends VisionProcessorBase<List<ImageLabel>
           @Override
           public void run() {
 
-
-            Realm.init(context);
+        Realm.init(context);
 
         App app = new App(new AppConfiguration.Builder("application-0-laohu")
                 .appName("My App")
                 .requestTimeout(30, TimeUnit.SECONDS)
                 .build());
-        Credentials credentials = Credentials.emailPassword("visionfoodieApp", "1qaz2wsx");//Credentials.anonymous();
+
+        Credentials credentials = Credentials.emailPassword("visionfoodieApp", "1qaz2wsx");
 
         app.loginAsync(credentials, it -> {
           if (it.isSuccess()) {
             User user = app.currentUser();
             assert user != null;
             MongoClient mongoClient = user.getMongoClient("Vision-Foodie");
-            if (mongoClient != null) {
-              Log.v("loginAsync", "Successfully connected to the MongoDB instance.");
-            } else {
-              Log.e("loginAsync", "Error connecting to the MongoDB instance.");
-            }
 
             MongoDatabase mongoDatabase = mongoClient.getDatabase("visionFoodie");
             MongoCollection<Document> mongoCollection  = mongoDatabase.getCollection("contents");

@@ -28,7 +28,6 @@ import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Pair;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.ImageView;
@@ -164,47 +163,16 @@ public final class StillImageActivity extends AppCompatActivity {
                 }
               }
             });
-/*
-    ImageView settingsButton = findViewById(R.id.settings_button);
-    settingsButton.setOnClickListener(
-        v -> {
-          Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
-          intent.putExtra(
-              SettingsActivity.EXTRA_LAUNCH_SOURCE, SettingsActivity.LaunchSource.STILL_IMAGE);
-          startActivity(intent);
-        });*/
+
   }
 
   @Override
   public void onResume() {
     super.onResume();
     Log.d(TAG, "onResume");
-    Log.d(TAG, "여기?");
-    Log.d("TTT", "onResume");
 //    createImageProcessor();
 //    tryReloadAndDetectInImage();
   }
-
-/*
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.still_image_menu, menu);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.settings) {
-      Intent intent = new Intent(this, SettingsActivity.class);
-      intent.putExtra(SettingsActivity.EXTRA_LAUNCH_SOURCE, LaunchSource.STILL_IMAGE);
-      startActivity(intent);
-      return true;
-    }
-
-    return super.onOptionsItemSelected(item);
-  }
-*/
-
 
   @Override
   public void onSaveInstanceState(Bundle outState) {
@@ -231,7 +199,6 @@ public final class StillImageActivity extends AppCompatActivity {
 
   private void startChooseImageIntentForResult() {
 
-
     Intent intent = new Intent();
     intent.setType("image/*");
     intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -241,23 +208,25 @@ public final class StillImageActivity extends AppCompatActivity {
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+    initMsg();
+
     if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
       Log.d(TAG, "REQUEST_IMAGE_CAPTURE");
-      initMsg();
+
       createImageProcessor();
       tryReloadAndDetectInImage();
+
     } else if (requestCode == REQUEST_CHOOSE_IMAGE && resultCode == RESULT_OK) {
       // In this case, imageUri is returned by the chooser, save it.
       Log.d(TAG, "REQUEST_CHOOSE_IMAGE");
       imageUri = data.getData();
-      initMsg();
+
       createImageProcessor();
       tryReloadAndDetectInImage();
+
     } else {
-      Log.d(TAG, "죽여줘");
-      Log.d(TAG, "REQUEST_elseelse");
+
       imageUri = null;
-      initMsg();
 
       tryReloadAndDetectInImage();
       super.onActivityResult(requestCode, resultCode, data);
@@ -395,7 +364,6 @@ public final class StillImageActivity extends AppCompatActivity {
     isLoding = false;
     failMsg.setVisibility(View.INVISIBLE);
     successLayout.setVisibility(View.INVISIBLE);
-//    successMsg.setVisibility(View.INVISIBLE);
 
   }
 
@@ -420,9 +388,7 @@ public final class StillImageActivity extends AppCompatActivity {
       logoImg.setVisibility(View.VISIBLE);
       return;
     }
-    // 마지막으로 뒤로가기 버튼을 눌렀던 시간에 2초를 더해 현재시간과 비교 후
-    // 마지막으로 뒤로가기 버튼을 눌렀던 시간이 2초가 지나지 않았으면 종료
-    // 현재 표시된 Toast 취소
+
     if (System.currentTimeMillis() <= backKeyPressedTime + 2000) {
       finish();
 
